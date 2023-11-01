@@ -1,0 +1,187 @@
+# Day1: React Introduction
+
+Using plain html how we will write "Hello World" in browser
+--> Emmet(It gives some template code)
+--> CDN(content delievery networks) These are the website where libraries are hosted and using cdn links we are just fetching that library in our project.
+
+Ex# Cdn link for jquery, react, sweetAlert2, leafletjs, googlemap, fontawesome
+Get React into our project, as browser don't understand react code directly.
+document, createElement, appendChild, getElementById .. ect these are already available in the browser.
+
+write "cdn react"
+
+ReactElement(Object) ==> HTML(browser understands)
+
+Can be single child either in array of childs if an html element have more than one childeren
+
+At the end of day ReactElement is an Object.
+
+createElement(name_of_the_tag, attributes, childerens)
+
+First childeren could be a normal react element
+if you have given multiple childerens, then you have to pass that ReactElement using an array.
+
+
+render() is replacing data when something getting render.
+
+
+git branch -M main  --> To change the name of branch master to main
+Setup your github ssh properly
+How to setup ssh inside github on local machine
+======================================================================================================
+
+
+
+"index.html":
+==================================================================================
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+    <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+    <!--Using plain html write "Hello World" in the browser
+    <div id="root">
+        <h1>Hello World!</h1>
+    </div>
+    -->
+    <div id="header">
+        This is a header
+    </div>
+    <div id="root"></div>
+    <div id="footer">
+        This is a footer
+    </div>
+    <!--Using js write "Hello World" in the browser
+    <script>
+        const heading = document.createElement("h1");
+        heading.innerHTML = "Hello World from javascript";
+        const root = document.getElementById("root")
+        root.appendChild(heading);
+    </script>
+    -->
+
+    <!--Using cdn we have just injected react18 in our project-->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>￼ 
+
+<!-- <script>
+    const heading = React.createElement("h1", {}, "Hello World from React!");
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(heading);
+</script> -->
+
+
+<!-- 
+<div id="parent">
+    <div id="child">
+        <h1></h1>
+    </div>
+</div> 
+-->
+
+<!-- 
+<div id="parent">
+    <div id="child1">
+        <h1>I'm an h1 tag</h1>
+        <h2>I'm an h2 tag</h2>
+    </div>
+    <div id="child2">
+        <h1>I'm an h1 tag</h1>
+        <h2>I'm an h2 tag</h2>
+    </div>
+</div> 
+-->
+
+
+<script src="./App.js"></script>
+</body> 
+================================================================================
+
+"App.js":
+==========
+// const parent = React.createElement(
+//     "div",
+//     { id: "parent" },
+//     React.createElement(
+//         "div",
+//         { id: "child" },
+//         React.createElement(
+//             "h1",
+//             { },
+//             "I'm an h1 tag" 
+//         )
+        
+//     )
+// );
+
+// const parent = React.createElement(
+//     "div",
+//     { id: "parent" },
+
+//     React.createElement(
+//         "div",
+//         { id: "child" },
+//         [React.createElement(
+//             "h1",
+//             { },
+//             "I'm an h1 tag" 
+//         ),
+//         React.createElement(
+//             "h2",
+//             { },
+//             "I'm an h1 tag" 
+//         ),
+//         ]
+
+        
+//     )
+// );
+
+const parent = React.createElement(
+    "div",
+    { id: "parent" },
+    
+    [React.createElement(
+        "div",
+        { id: "child" },
+        [React.createElement(
+            "h1",
+            { },
+            "I'm an h1 tag" 
+        ),
+        React.createElement(
+            "h2",
+            { },
+            "I'm an h2 tag" 
+        ),
+        ]),
+
+        React.createElement(
+            "div",
+            { id: "child2" },
+            [React.createElement(
+                "h1",
+                { },
+                "I'm an h1 tag" 
+            ),
+            React.createElement(
+                "h2",
+                { },
+                "I'm an h2 tag" 
+            ),
+            ]),
+        ]);
+
+
+//-------------------------
+const heading = React.createElement("h1", {id: "heading", class:"myh1", xyz:"abc"}, "Hello World from React!");
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(parent);
+
+console.log(parent);
+
+=========================================================

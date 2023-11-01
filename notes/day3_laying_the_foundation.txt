@@ -1,0 +1,82 @@
+# React Component --> Every thing in React is component
+- Class Based Component - OLD
+- Functional Component - NEW
+
+------------------------------------------------------------------------------------
+Functional Components: No this, no state. Just pure function.
+1. Stateless components are also called functional or dumb components because they don’t have any local state and do not interact with the DOM directly
+1. Stateless Functional Components (SFC)
+2. Stateful Functional Components
+3. Render Props Pattern 
+4. Higher Order Components (HOC)
+5. Context API
+6. useContext Hooks
+7. useReducer Hooks
+8. useState Hooks
+9. useEffect Hooks
+10. useCallback Hooks
+11. useMemo Hooks
+12. useRef Hooks
+13. useLayout Effect Hooks
+14. useDebugValue Hooks
+-------------------------------------------------------------------------------------
+
+React Functional Component --> It's a normal Js function or Arrow Function which returns JSX element.
+
+# Syntax for rendering React Functional Component
+const Title = () => (
+    <h1 className="head" tabIndex="5">React Learning Started</h1>
+);
+const GreetingMessage = () => { 
+    return <h1>Hello World</h1>;
+}
+
+const HeadingComponent = () => (
+    <div id="container">
+    <Title />
+    <h1 className="heading">React Funstional Component</h1>
+    </div>
+);
+
+root.render(<Component_Name />);
+root.render(<HeadingComponent />)
+Component_Name --> Function Name
+
+# Component Composition
+Composing 2 components in one another
+Parent -> Child -> Grandchild -> GreatGrandChild...
+
+
+# You can inject any js code inside JSX using {} Ex# {200 + 300}
+<Title />
+{Title()}
+<Title> </Title>
+
+--> JSX is end of the day React Element, React Element is end of the day JS Object
+--> React Function Component is end of the day just a js function
+--> You can execute any valid js code inside JSX using {}
+
+
+# How can we put ReactElement inside a React Component
+You can pass children to the component and then you will be able to render them inside your component.
+const elem = <span>React Element</span>
+const title = (
+     <h1 className="head" tabIndex="5">
+        {elem}
+        React Learning Started
+     </h1>
+);
+
+const HeadingComponent = () => (
+    <div id="container">
+    {title}  --> Inserted React Element in this React Function Component
+    <Title /> --> Inserted React Componet in this React Function Component
+    <h1 className="heading">React Funstional Component</h1>
+    </div>
+);
+
+<Title></Title> or <Title />
+# You can compose anything inside anything using JSX
+
+# Cross Site Scripts --> can read your computer info, localstorage data, session data , etc...
+# JSX takes care of injection attacks, It protects us from cross site scripts 

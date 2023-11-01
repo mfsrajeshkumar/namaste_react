@@ -1,34 +1,3 @@
-# Day1: React Introduction
-
-Using plain html how we will write "Hello World" in browser
---> Emmet(It gives some template code)
---> CDN(content delievery networks) These are the website where libraries are hosted and using cdn links we are just fetching that library in our project.
-
-Ex# Cdn link for jquery, react, sweetAlert2, leafletjs, googlemap, fontawesome
-Get React into our project, as browser don't understand react code directly.
-document, createElement, appendChild, getElementById .. ect these are already available in the browser.
-
-write "cdn react"
-
-ReactElement(Object) ==> HTML(browser understands)
-
-Can be single child either in array of childs if an html element have more than one childeren
-
-At the end of day ReactElement is an Object.
-
-createElement(name_of_the_tag, attributes, childerens)
-
-First childeren could be a normal react element
-if you have given multiple childerens, then you have to pass that ReactElement using an array.
-
-
-render() is replacing data when something getting render.
-
-
-git branch -M main  --> To change the name of branch master to main
-Setup your github ssh properly
-How to setup ssh inside github on local machine
-
 
 Episode2
 ==============================
@@ -92,7 +61,7 @@ npx parcel index.html (dev build)
 npx parcel build index.html (production build)
 -------------------------------------------------
 npm run start //  npm start
-npm run build // npm build
+npm run build // npm run build
 ============================================================
 JSX --> HTML-like or XML-like syntax (is not html in react)
 
@@ -123,8 +92,22 @@ root.render(jsxHeading);
 vscode-icons  --> Extension for showing icon of files and folders
 --------------------------------------------------------------------
 
+# React Element not is Html Element , It's an object , When we render this to DOM then 
+  this ReactElement becomes HTML element
 
-Q. What is explicit and implicit?
+  So, React Element is just a javascript object.
 
-npx parcel index.html --> is command used for create development build 
-Here npx means you're executing a npm package in this case (parcel) and you give a source file as index.html
+# JSX is a javascript synatx which is used for create ReactElement.
+# JSX - is not HTML in Js (It's HTML-like or XML-like syntax)
+# JSX (transpiled before it reaches the JS) - PARCEL - Babel
+
+# React.createElement => ReactElement - Js Object => HtmlElement(render)
+# JSX => React.createElement => ReactElement - JS Object => HtmlElement(render)
+# Babel is a javascript compiler.
+
+# In JSX className is equivalent to class attribute in HTML
+# In JSX tabIndex is equivalent to tabindex attribute in HTML
+# In JSX attribute name need to be written in CamelCase
+
+
+# If you need to write JSX in multiple lines then just wrap your JSX code inside parenthesis

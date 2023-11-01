@@ -1,81 +1,35 @@
-// const parent = React.createElement(
-//     "div",
-//     { id: "parent" },
-//     React.createElement(
-//         "div",
-//         { id: "child" },
-//         React.createElement(
-//             "h1",
-//             { },
-//             "I'm an h1 tag" 
-//         )
-        
-//     )
-// );
-
-// const parent = React.createElement(
-//     "div",
-//     { id: "parent" },
-
-//     React.createElement(
-//         "div",
-//         { id: "child" },
-//         [React.createElement(
-//             "h1",
-//             { },
-//             "I'm an h1 tag" 
-//         ),
-//         React.createElement(
-//             "h2",
-//             { },
-//             "I'm an h1 tag" 
-//         ),
-//         ]
-
-        
-//     )
-// );
-
-const parent = React.createElement(
-    "div",
-    { id: "parent" },
-    
-    [React.createElement(
-        "div",
-        { id: "child" },
-        [React.createElement(
-            "h1",
-            { },
-            "I'm an h1 tag" 
-        ),
-        React.createElement(
-            "h2",
-            { },
-            "I'm an h2 tag" 
-        ),
-        ]),
-
-        React.createElement(
-            "div",
-            { id: "child2" },
-            [React.createElement(
-                "h1",
-                { },
-                "I'm an h1 tag" 
-            ),
-            React.createElement(
-                "h2",
-                { },
-                "I'm an h2 tag" 
-            ),
-            ]),
-        ]);
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 
-//-------------------------
-const heading = React.createElement("h1", {id: "heading", class:"myh1", xyz:"abc"}, "Hello World from React!");
+const reactElement = React.createElement("h1", { id: "heading"}, "This heading from React Element!!")
+const jsxHeading = <h2 id="heading">This is Jsx syntax in React!</h2>
+
+//React Element
+const heading = (
+    <h1 className="head" tabIndex="5">
+        React Element using JSx
+    </h1>
+);
+
+const fn = () => true;
+const fn2 = () => {return true};
+//React Functional Component --> is a js function which returns JSx or React Element
+
+const HeadingComponent1 = () => (<h3 className="heading">Functional component with arrow function</h3>);
+const HeadingComponent = () => {
+    // return <h3>Functional component with arrow function</h3>;
+    return(
+        <div id="headingComponent">
+            <p>Just for Information!!</p>
+            <h3>Functional component with arrow function</h3>
+        </div>
+    );
+}
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+root.render(heading);
 
-console.log(parent);
+console.log(reactElement);
+console.log(jsxHeading);
 
